@@ -1,0 +1,36 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "title": "Bún đậu mắm tôm",
+            "photos": "https://www.vntrip.vn/cam-nang/wp-content/uploads/2017/07/bun-dau-mam-tom.jpg",
+            "calories": "high",
+            "distance": "5 km" ,
+            "ratings" : 5
+        },
+        {
+            "id": 2,
+            "title": "Chả cá Lã Vọng",
+            "photos": "https://www.vntrip.vn/cam-nang/wp-content/uploads/2017/07/cha-ca-ha-noi.jpg",
+            "calories": "low",
+            "distance": "1.5 km",
+            "ratings": 4
+        },
+        {
+            "id": 3,
+            "title": "Bún chả",
+            "photos": "https://www.vntrip.vn/cam-nang/wp-content/uploads/2017/07/bun-cha-2.jpg",
+            "calories": "medium",
+            "distance": "2 km",
+            "ratings": 3
+        },
+        {
+            "id": 4,
+            "title": "Bánh tôm",
+            "photos": "https://www.vntrip.vn/cam-nang/wp-content/uploads/2017/07/banh-tom.jpg",
+            "calories": "low",
+            "distance": "3 km",
+            "ratings": 4
+        }
+    ]
+}
