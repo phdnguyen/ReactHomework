@@ -4,34 +4,40 @@ import { Platform, StyleSheet, View, Text, Image, TouchableOpacity } from 'react
 class Items extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = { link = './images/rain.png' };
     }
 
-    chooseIcon() {
+    chooseIcon = () => {
 
-    }
+        if (this.state.list === "rain") { link = './images/rain.png' }
+        if (weatherType === 'clouds') { link = './images/clouds.png' }
+        if (weatherType === 'rain') { link = './images/rain.png' }
+        if (weatherType === 'snow') { link = './images/snow.png' }
+
+    };
+
     render() {
         return (
             <View style={styles.container}>
 
-                <Text style={styles.city}></Text>
-                <Text style={styles.day}></Text>
+                <Text style={styles.city}>{this.props.comic.city}</Text>
+                <Text style={styles.day}>{this.props.comic.dt}</Text>
                 <View style={styles.today}>
 
                     <View>
-                        <Image style = {styles.todayIcon}/>
-                        <Text style = {styles.todayInfo}></Text>
+                        <Image style={styles.todayIcon} source={require('./images/clear.png')} />
+                        <Text style={styles.todayInfo}>{this.props.comic.weather.description}</Text>
                     </View>
 
                     <View>
 
-                        <Text style={styles.todayTemp}></Text>
+                        <Text style={styles.todayTemp}>{this.props.comic.temp.day}</Text>
                         <View>
                             <TouchableOpacity>
-                                <Text style = {{fontSize: 20}}>°C</Text>
+                                <Text style={{ fontSize: 20 }}>°C</Text>
                             </TouchableOpacity>
                             <TouchableOpacity>
-                                <Text style = {{fontSize: 20}}>°F</Text>
+                                <Text style={{ fontSize: 20 }}>°F</Text>
 
                             </TouchableOpacity>
                         </View>
@@ -40,13 +46,13 @@ class Items extends Component {
 
                 </View>
 
-                <View style={styles.box}>
+                {/* <View style={styles.box}>
 
                     <Text style={styles.info}></Text>
                     <Text style={styles.info}></Text>
-                    <Image source={this.state.data.image} style ={styles.smallImage}/>
+                    <Image source={require(this.state.link)} style={styles.smallImage} />
 
-                </View>
+                </View> */}
 
             </View>
         );
@@ -63,7 +69,7 @@ const styles = StyleSheet.create({
     },
 
     box: {
-        backgroundColor: rgb(46,44,61),
+        backgroundColor: rgb(46, 44, 61),
         justifyContent: 'row',
         alignItems: 'space-around'
     },
@@ -99,7 +105,7 @@ const styles = StyleSheet.create({
     },
 
     smallImage: {
-        
+
     }
 
 

@@ -5,15 +5,22 @@ class Screen extends Component {
     state = {
         
         data: [],
-        city: '',
+        city: 'hanoi',
     }
 
     componentDidMount() {
         axios.get('http://api.openweathermap.org/data/2.5/forecast/daily?q=hanoi&appid=927d09bc49dbee6aac7f5cb1df707542').then(res => this.setState({ data: res.data.list }))
     }
-    renderItem = ({ item }) => <Items
-        comic={item}
-         />
+
+    loadCity (city){
+
+        if (city !== 'hanoi'){
+            axios.get(`http://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&appid=927d09bc49dbee6aac7f5cb1df707542`).then(res => this.setState({ data: res.data.list }))
+        }
+
+    }
+
+    renderItem = ({ item }) => <Items comic={item}/>
 
     keyExtractor = (item) => item.id
     render() {
@@ -28,7 +35,7 @@ class Screen extends Component {
 
 const styles = StyleSheet.create({
     input:{
-        width: Dimensions.get('screen').width*2/3;
+        width: Dimensions.get('screen').width*2/3,
         height: 40,
         borderRadius: 10,
     },
@@ -36,7 +43,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     }
-
 
 })
 
