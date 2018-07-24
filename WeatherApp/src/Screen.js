@@ -93,7 +93,7 @@ class Screen extends Component {
                     <FlatList
                         data={this.state.data}
                         renderItem={this.renderItem}
-                        keyExtractor={this.keyExtractor} />
+                        keyExtractor={this._keyExtractor} />
                 </View>
             </View>
         );
@@ -114,9 +114,9 @@ const styles = StyleSheet.create({
 
     searchBar: {
         backgroundColor: 'rgba(255,255,255,0.5)',
-        width: 5,
+        width: 10,
         height: 5,
-        borderRadius: 5,
+        borderRadius: 4,
         alignItems: 'center'
     },
 
